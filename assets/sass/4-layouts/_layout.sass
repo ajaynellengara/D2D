@@ -1,0 +1,348 @@
+// layout
+#pageWrapper
+    overflow: hidden
+
+// HEADING STYLE
+.flxTle
+    margin-bottom: 10px
+    @include display
+    @media only screen and ( min-width: 768px)
+        margin-bottom: 15px
+    @media only screen and ( min-width: 1441px)
+        margin-bottom: 25px
+    @media only screen and ( min-width: 1700px)
+        margin-bottom: 40px
+    .tleWrap
+        width: calc( 100% - 140px )
+        margin-bottom: 0
+        @media only screen and ( min-width: 992px)
+            width: calc( 100% - 170px )
+        .mTle
+            @media only screen and ( min-width: 1441px)
+                font-size: 28px
+    .rgtSd
+        width: 140px
+        justify-content: end
+        @include display
+        @media only screen and ( min-width: 992px)
+            width: 170px
+
+.tleWrap
+    position: relative
+    z-index: 0
+    margin-bottom: 10px
+    @media only screen and (min-width: 576px)
+        margin-bottom: 20px
+    @media only screen and (min-width: 992px)
+        margin-bottom: 40px
+    &.center
+        text-align: center
+    .mTleWrap
+        position: relative
+        z-index: 0
+        align-items: center
+        @include display
+        flex-wrap: nowrap
+        margin: 5px 0
+        @media only screen and (min-width: 768px)
+            margin: 10px 0
+        @media only screen and (min-width: 1441px)
+            margin: 30px 0
+        @media only screen and (min-width: 1700px)
+            margin: 40px 0
+        .mTle, h2
+            padding: 0 10px
+        &::after, &::before
+            content: ''
+            max-width: 50%
+            display: inline-block
+            background-color: #ff0
+            height: 10px
+            flex: auto
+            background: url(../images/dElmt-border.svg)
+            background-repeat: repeat-x
+            background-size: contain
+            opacity: 50%
+        .bgTle
+            position: absolute
+            top: 50%
+            left: 50%
+            z-index: -1
+            transform: translate(-50%, -50%)
+            pointer-events: none
+            font-size: 26px
+            line-height: 1
+            font-weight: 700
+            color: $text
+            text-align: center
+            white-space: nowrap
+            opacity: 5%
+            margin: 0
+            display: inline-block
+            @media only screen and (min-width: 468px)
+                font-size: 56px
+            @media only screen and (min-width: 768px)
+                font-size: 80px
+            @media only screen and (min-width: 1441px)
+                font-size: 120px
+            @media only screen and (min-width: 1700px)
+                font-size: 170px
+    .mTle, h2
+        font-size: 18px
+        line-height: 1.2
+        font-weight: 600
+        color: $black
+        margin: 2px 0
+        display: inline-block
+        @media only screen and (min-width: 468px)
+            font-size: 20px
+        @media only screen and (min-width: 576px)
+            font-size: 22px
+        @media only screen and (min-width: 992px)
+            font-size: 26px
+            margin: 5px 0
+        @media only screen and (min-width: 1200px)
+            font-size: 28px
+        @media only screen and (min-width: 1441px)
+            font-size: 30px
+        &>span
+            color: $basecolor
+    .sTle, h6
+        font-size: 10px
+        font-weight: 400
+        line-height: 1.2
+        letter-spacing: 1.5px
+        color: $basecolor5
+        margin: 2px 0
+        @media only screen and (min-width: 768px)
+            font-size: 11px
+        @media only screen and (min-width: 992px)
+            font-size: 12px
+            margin: 5px 0
+
+// BUTTON STYLE
+.hoveranim
+    display: flex
+    align-items: center
+    justify-content: center
+    position: relative
+    overflow: hidden
+    &::before
+        content: ''
+        position: absolute
+        z-index: 0
+        top: 0
+        bottom: 0
+        width: 100%
+        background: $basecolor4
+        -webkit-transform: scaleX(0)
+        -ms-transform: scaleX(0)
+        transform: scaleX(0)
+        -webkit-transition: -webkit-transform 0.3s ease
+        transition: -webkit-transform 0.3s ease
+        transition: transform 0.3s ease
+        transition: transform 0.3s ease, -webkit-transform 0.3s ease
+        left: 0
+        -webkit-transform-origin: right
+        -ms-transform-origin: right
+        transform-origin: right
+    span
+        position: relative
+        z-index: 1
+    &:hover
+        color: #fff
+        &::before
+            -webkit-transform-origin: left
+            -ms-transform-origin: left
+            transform-origin: left
+            -webkit-transform: scaleX(1)
+            -ms-transform: scaleX(1)
+            transform: scaleX(1)
+
+// BUTTON STYLE
+.baseBtn
+    font-size: 10px
+    line-height: 1
+    font-weight: 500
+    color: $white
+    width: 100%
+    max-width: 120px
+    height: 30px
+    padding: 5px
+    border-radius: 6px
+    background: rgba($basecolor3, 1)
+    background: linear-gradient(90deg, rgba($basecolor3,1) 0%, rgba($basecolor4,1) 100%)
+    transition: all 0.4s ease
+    @include center
+    @media only screen and (min-width: 576px)
+        font-size: 11px
+        max-width: 180px
+        height: 35px
+        padding: 10px
+    @media only screen and (min-width: 992px)
+        max-width: 200px
+        font-size: 12px
+        height: 40px
+    &>span
+        margin: 0 2px
+        @media only screen and (min-width: 992px)
+            margin: 0 5px
+    &:hover
+        .icon
+            transform: translateX(5px)
+    .icon
+        transition: all 0.4s ease
+.baseBtn2
+    background: $white
+    color: $basecolor3
+
+// BREADCRUMB
+#breadCrumb
+    padding: 15px 0
+    @media only screen and (min-width: 768px)
+        padding: 20px 0
+    @media only screen and (min-width: 1441px)
+        padding: 30px 0
+    ul
+        align-items: center
+        @include display
+        li
+            align-items: center
+            @include display
+            &:not(:last-of-type)
+                &::after
+                    content: "/"
+                    font-size: 12px
+                    line-height: 1
+                    color: #848283
+                    margin: 0 7px
+                    @media only screen and (min-width: 768px)
+                        font-size: 14px
+            a
+                font-size: 12px
+                line-height: 1
+                color: #848283
+                display: block
+                margin: 0
+                @media only screen and (min-width: 768px)
+                    font-size: 14px
+                &.current
+                    color: $basecolor
+
+// READMORE
+.Readmore_closed
+    position: relative
+    z-index: 1
+    p
+        position: relative
+        overflow: hidden
+        text-overflow: ellipsis
+        -webkit-line-clamp: 2
+        line-clamp: 2
+        -webkit-box-orient: vertical
+        display: none
+        &:first-of-type
+            display: -webkit-box
+            &::after
+                content: ""
+                position: absolute
+                bottom: 2px
+                right: 0
+                background: $white
+                width: 80px
+                height: 22px
+                display: block
+                @media only screen and (min-width: 768px)
+                    width: 90px
+                @media only screen and (min-width: 1200px)
+                    width: 100px
+    .Readmore
+        position: absolute
+        bottom: 0
+        right: 0
+    ul, ol, h2, h3, h4, h5, h6
+        display: none
+        height: 0
+    &_open
+        p
+            -webkit-line-clamp: inherit !important
+            line-clamp: inherit !important
+        ul, ol, h2, h3, h4, h5, h6
+            height: auto !important
+            display: block !important
+
+// PAGINATION
+.pagination
+    padding-left: 8px
+    padding-right: 8px
+    margin-top: 20px
+    justify-content: center
+    width: 100%
+    @media only screen and (min-width: 576px)
+        justify-content: flex-start
+    @media only screen and (min-width: 768px)
+        margin-top: 50px
+    li
+        -webkit-transition: background-color 0.3s
+        transition: background-color 0.3
+        &>*
+            min-width: 30px
+            height: 30px
+            display: flex
+            align-items: center
+            justify-content: center
+            border: 1px solid #e8e8e8
+            font-size: 12px
+            color: $black
+            -webkit-transition: background-color 0.3s
+            transition: background-color 0.3
+        &.disabled
+            pointer-events: none
+            opacity: .4
+        &:not(:last-of-type)
+            margin-right: 5px
+        &:hover>*, &.active>*
+            background: $basecolor
+            color: $white
+        &.prev>*, .next>*
+            font-size: 19px
+        &:nth-child(1)
+            &>*
+                visibility: hidden
+                position: relative
+                &::after
+                    content: '<<'
+                    color: $basecolor
+                    min-width: 30px
+                    height: 30px
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    border: 1px solid #e8e8e8
+                    font-size: 12px
+                    visibility: visible
+                    position: absolute
+                    top: 0
+                    left: 0
+                    -webkit-transition: background-color .3s
+                    transition: background-color .3
+        &:last-of-type
+            &>*
+                visibility: hidden
+                position: relative
+                &::after
+                    content: '>>'
+                    color: $basecolor
+                    min-width: 30px
+                    height: 30px
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    border: 1px solid #e8e8e8
+                    font-size: 12px
+                    visibility: visible
+                    position: absolute
+                    top: 0
+                    left: 0
+                    -webkit-transition: background-color .3s
+                    transition: background-color .3

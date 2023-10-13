@@ -1,0 +1,198 @@
+/************ ****** ************/
+/************ FOOTER ************/
+/************ ****** ************/
+#Footer
+    width: 100%
+    background-color: $black
+    position: relative
+    z-index: 0
+    .ftTle
+        font-size: 12px
+        font-weight: 500
+        line-height: 1.2
+        color: $white
+        display: block
+        margin-bottom: 10px
+        @media only screen and (min-width: 576px)
+            font-size: 13px
+            margin-bottom: 15px
+        @media only screen and (min-width: 992px)
+            font-size: 14px
+            margin-bottom: 20px
+        @media only screen and (min-width: 1441px)
+            margin-bottom: 40px
+    .ftTxt
+        font-size: 12px
+        font-weight: 300
+        line-height: 1.4
+        color: $white
+        display: block
+        @media only screen and (min-width: 576px)
+            font-size: 13px
+        @media only screen and (min-width: 992px)
+            font-size: 14px
+        &.clr2
+            color: #A5A5A5
+    .addrs
+        line-height: 1.8
+    .logo
+        width: 70px
+        height: auto
+        display: block
+        margin-bottom: 15px
+        opacity: 0.6
+        @media only screen and (min-width: 768px)
+            width: 90px
+            margin-bottom: 12px
+        @media only screen and (min-width: 1441px)
+            width: 105px
+            margin-bottom: 30px
+        img, svg
+            display: block
+            @include imgFit
+    a.ftTxt:hover
+        color: #A5A5A5
+    a.clr2:hover
+        color: $basecolor2
+    .ftUl
+        @include display
+        li
+            width: 100%
+            &:not(:last-of-type)
+                margin-bottom: 5px
+                @media only screen and (min-width: 992px)
+                    margin-bottom: 10px
+    .ftSocialUl
+        margin: 0 -10px 15px
+        align-items: center
+        @include display
+        @media only screen and (min-width: 992px)
+            margin: 0 -12px 30px
+        li
+            padding: 0 10px
+            @media only screen and (min-width: 992px)
+                padding: 0 12px
+            p
+                margin: 0
+            a
+                display: block
+                &:hover
+                    img, svg
+                        fill: $basecolor2
+                img, svg
+                    fill: #707070
+                    transition: all 0.3s ease
+                    max-width: 14px
+                    max-height: 14px
+                    display: block
+                    @include imgFit
+    .ftAccordion
+        padding: 0
+        margin: 0 -8px
+        position: relative
+        z-index: 1
+        @include display
+        @media only screen and (min-width: 768px)
+            margin: 0 -15px
+        @media only screen and (min-width: 992px)
+            margin: 0 -25px
+        .accordion-button
+            &::after
+                background-image: none
+                content: "+"
+                height: auto
+                font-size: 18px
+                line-height: 0.4
+                text-align: right
+                color: $white
+                display: block
+                margin-top: -8px
+                transform: none
+                @media only screen and (min-width: 768px)
+                    display: none
+            &[aria-expanded="true"]
+                &::after
+                    content: "-"
+        .accordion-item
+            background-color: transparent
+            &:not(:last-of-type)
+                border-bottom: 1px solid rgba($white, 0.2)
+                @media only screen and (min-width: 768px)
+                    border: 0
+
+            .accordion-header
+                .accordion-button
+                    padding: 0
+                    background-color: transparent
+                    border-bottom: 0
+                    box-shadow: none
+                    pointer-events: all
+                    @media only screen and (min-width: 768px)
+                        pointer-events: none
+                    &:focus
+                        box-shadow: none
+            .accordion-collapse
+                .accordion-body
+                    padding: 0
+        .Col
+            width: 100%
+            padding: 0 8px
+            margin: 10px 0
+            @media only screen and (min-width: 768px)
+                width: calc(100% / 2)
+                padding: 0 15px
+                margin: 10px 0
+            @media only screen and (min-width: 992px)
+                width: calc( (100% - 15%) / 3 )
+                padding: 0 25px
+                &:nth-child(4)
+                    width: 15%
+            @media only screen and (min-width: 1441px)
+                margin: 15px 0
+    .ftMain
+        padding: 30px 0 10px
+        @media only screen and (min-width: 768px)
+            padding: 40px 0 20px
+        @media only screen and (min-width: 992px)
+            padding: 50px 0 30px
+        @media only screen and (min-width: 1441px)
+            padding: 80px 0 70px
+    .ftBttm
+        padding: 10px 0
+        border-top: 1px solid rgba(#707070, 0.8)
+        @media only screen and (min-width: 576px)
+            padding: 20px 0
+        @media only screen and (min-width: 992px)
+            padding: 20px 0 30px
+        p
+            color: $white
+            margin: 2px 0
+            @media only screen and (min-width: 768px)
+                margin: 0
+            a
+                color: #B33B9C
+                text-decoration: none
+                &:hover
+                    color: $basecolor
+        .dFlx
+            justify-content: space-between
+            @include display
+            &>*
+                width: 100%
+                @media only screen and (min-width: 768px)
+                    width: fit-content
+            .lftSd
+                text-align: center
+                @media only screen and (min-width: 768px)
+                    text-align: left
+            .rgtSd
+                text-align: center
+                flex-direction: column-reverse
+                align-items: center
+                justify-content: center
+                @include display
+                @media only screen and (min-width: 768px)
+                    width: 40%
+                    text-align: right
+                    justify-content: flex-end
+                    flex-direction: row

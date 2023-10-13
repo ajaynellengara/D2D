@@ -1,0 +1,348 @@
+//Header
+.modal-backdrop
+    background: rgba(54, 54, 54, 0.8)
+    &.show
+        opacity: 1
+        z-index: 3
+body.manufacturer-home
+    #Header
+        &.sticky
+            background-color: $black
+        #HeaderMain
+            .logo
+                .logo-dark
+                    display: none
+                .logo-white
+                    display: block
+            .menuIcon
+                button
+                    span
+                        background-color: $basecolor2
+            #HeaderPOP
+                .accordion
+                    .accordion-item
+                        .accordion-header
+                            a, button
+                                @media only screen and (min-width:992px)
+                                    color: $white
+                                &.active
+                                    @media only screen and (min-width:992px)
+                                        color: $white
+                                &::before
+                                    @media only screen and (min-width:992px)
+                                        background-color: $white
+
+#Header
+    width: 100%
+    height: 60px
+    position: absolute
+    z-index: 4
+    top: 0
+    left: 0
+    animation-duration: .5s
+    padding: 10px 0
+    transition: all .5s ease
+    @media only screen and (min-width:576px)
+        height: 80px
+    @media only screen and (min-width:992px)
+        height: 100px
+    &.hide
+        display: none
+    &.sticky
+        position: fixed
+        top: 0
+        animation-name: fadeInDown
+        animation-duration: .5s
+        animation-fill-mode: both
+        box-shadow: 0 5px 20px 0 rgba(0,0,0,0.1)
+        background-color: $white
+        height: 60px
+        @media only screen and (min-width:992px)
+            height: 90px
+        #HeaderMain
+            .mainFlx
+                &> .lSide
+                    width: 90px
+                    @media only screen and (min-width:992px)
+                        width: 120px
+
+    #HeaderMain
+        height: 100%
+        align-items: center
+        @include display
+        .container
+            position: relative
+            z-index: 0
+        .mainFlx
+            margin: 0 -5px
+            justify-content: space-between
+            align-items: center
+            @include display
+            @media only screen and (min-width: 992px)
+                margin: 0 -10px
+            &>*
+                padding: 0 5px
+                @media only screen and (min-width: 992px)
+                    padding: 0 10px
+            &>.lSide
+                width: 100px
+                @media only screen and (min-width: 992px)
+                    width: 135px
+            &>.RSide
+                width: calc(100% - 135px)
+                justify-content: flex-end
+                align-items: center
+                @include display
+                &>*
+                    padding: 0 5px
+                    @media only screen and (min-width: 768px)
+                        padding: 0 10px
+        .logo
+            width: 100%
+            display: block
+            svg, img
+                @include imgFit
+            .logo-white
+                display: none
+            .logo-dark
+                display: block
+        .menuIcon
+            display: flex
+            padding: 0 5px
+            transition: all .4s ease
+            position: absolute
+            z-index: 1055
+            @media only screen and (min-width: 992px)
+                display: none
+            &.open
+                button
+                    span
+                        margin: 0
+                        &:nth-child(1)
+                            transform: rotate(45deg) translate(0px, 0px)
+                        &:nth-child(2)
+                            display: none
+                        &:nth-child(3)
+                            transform: rotate(-45deg) translate(2px, -2px)
+            &.close
+                opacity: 0
+                visibility: hidden
+            button
+                display: block
+                border: none
+                width: 25px
+                height: 30px
+                padding: 0
+                font-size: 0
+                outline: none
+                margin: 0
+                box-shadow: none
+                border-radius: 0
+                background: none
+                @media only screen and (min-width: 992px)
+                    pointer-events: none
+                span
+                    width: 100%
+                    height: 2px
+                    display: block
+                    background: $basecolor5
+                    border-radius: 4px
+                    margin: 4px 0
+                    -webkit-transition: all 0.3s ease
+                    -moz-transition: all 0.3s ease
+                    -ms-transition: all 0.3s ease
+                    -o-transition: all 0.3s ease
+                    transition: all 0.3s ease
+                    position: relative
+                    @media only screen and (min-width: 992px)
+                        margin: 6px 0
+        #HeaderPOP
+            min-height: 100vh
+            padding: 0
+            @media only screen and (min-width: 992px)
+                position: unset
+                display: block
+                opacity: 1
+                padding: 0px
+                overflow: visible
+                height: 100%
+                min-height: auto
+                width: fit-content
+                width: -moz-fit-content
+            &::before
+                content: ""
+                position: absolute
+                left: 0
+                top: 0
+                width: 100%
+                height: 100%
+                z-index: 0
+                opacity: 1
+                transition: background-color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1)
+                -webkit-backdrop-filter: saturate(180%) blur(20px)
+                backdrop-filter: saturate(180%) blur(20px)
+                background-color: rgba(10, 11, 9, 0.55)
+                transition: all 0.5s
+                @media only screen and (min-width: 992px)
+                    display: none
+            .modal-dialog
+                margin: 0
+                -webkit-transform: none
+                transform: none
+                background: none
+                max-width: calc(100% - 60px)
+                height: 100%
+                left: -100%
+                transition: ease-in-out all .5s
+                position: unset
+                transform: translateX(-100%)
+                @media only screen and (min-width: 768px)
+                    max-width: calc(100vw - 93px)
+                @media only screen and (min-width: 992px)
+                    transform: none !important
+                    left: auto
+                    max-width: 100%
+                    background: none
+            .modal-content
+                padding: 0px
+                width: 100%
+                height: 100%
+                background: transparent
+                border: none
+                height: 100%
+                position: unset
+            .modal-body
+                padding: 0
+                background: $basecolor2
+                position: unset
+                width: 100%
+                display: flex
+                flex-direction: column
+                @media only screen and (min-width: 992px)
+                    background: $white
+                    flex-direction: row
+                    justify-content: space-between
+                    background: transparent
+                    align-items: center
+                .mobLogo
+                    width: 100%
+                    display: block
+                    fill: $basecolor
+                    padding: 5px 15px
+                    background: $basecolor5
+                    margin-bottom: 15px
+                    @media only screen and (min-width: 992px)
+                        display: none
+                    img, svg
+                        max-width: 90px
+                        display: block
+                        @include imgFit
+                .btnClose
+                    position: fixed
+                    background: none
+                    opacity: 1
+                    border-radius: 5px
+                    border: none
+                    outline: none
+                    box-shadow: none
+                    width: 25px
+                    height: 25px
+                    z-index: 999
+                    right: 9px
+                    top: 17px
+                    display: block
+                    @media only screen and (min-width: 992px)
+                        display: none
+                    span
+                        width: 100%
+                        height: 2px
+                        display: block
+                        background: $basecolor
+                        transition: all 0s ease
+                        position: relative
+                        &:nth-child(1)
+                            transform: rotate(45deg) translate(0px, 0px)
+                        &:nth-child(2)
+                            transform: rotate(-45deg) translate(2px, -2px)
+                        &:nth-child(3)
+                            display: none
+            .accordion
+                width: 100%
+                @media only screen and (min-width: 992px)
+                    display: flex
+                .accordion-item
+                    border-radius: 0px
+                    border: none
+                    background: none
+                    position: relative
+                    border-bottom: 1px solid #565656
+                    @media only screen and ( min-width: 992px )
+                        border: none
+                    .accordion-header
+                        @media only screen and (max-width: 992px)
+                            display: flex
+                            align-items: center
+                            justify-content: space-between
+                        a, button
+                            @include defaultValue
+                            position: relative
+                            display: flex
+                            text-align: start
+                            transition: all .3s
+                            font-size: 10px
+                            font-weight: 400
+                            line-height: 1
+                            letter-spacing: 1.9px
+                            color: $black
+                            padding: 10px
+                            margin: 0
+                            @media only screen and (min-width: 576px)
+                                font-size: 11px
+                                padding: 10px 15px
+                            @media only screen and (min-width: 992px)
+                                font-size: 12px
+                                padding: 10px 20px
+                            &>*
+                                padding: 0 3px
+                                @media only screen and (min-width: 1441px)
+                                    padding: 0 5px
+                            &[aria-expanded="true"], &:hover
+                                color: $basecolor3
+                            &.active
+                                color: $basecolor3
+                                &::before
+                                    opacity: 1
+                                    visibility: visible
+                            &::before
+                                content: ''
+                                width: 10px
+                                height: 1px
+                                background-color: $basecolor3
+                                position: absolute
+                                top: 0
+                                bottom: 0
+                                left: auto
+                                right: 15px
+                                margin: auto
+                                opacity: 0
+                                visibility: hidden
+                                transition: all 0.4s ease
+                                @media only screen and (min-width: 992px)
+                                    width: 28px
+                                    height: 1px
+                                    top: auto
+                                    left: 0
+                                    right: 0
+                                    background-color: $basecolor3
+                        a::after
+                            display: none
+            &.show
+                .modal-dialog
+                    left: 0px
+                    transform: translateX(0px) !important
+                .accordion
+                    .accordion-item
+                        .accordion-header
+                            a, button
+                                color: $text
+                                padding: 12px 15px
